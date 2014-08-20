@@ -102,7 +102,7 @@ footer {
 }
 
 /* iPhone (portrait) - 320px Breakpoint -------> */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 320px) and (orientation: portrait) {
 
   body {
     width: 320px;
@@ -114,12 +114,14 @@ footer {
 
   .sale_info {
     width: 320px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .products ul li {
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     width: 320px;
   }
 
