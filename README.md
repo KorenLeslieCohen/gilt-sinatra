@@ -2,7 +2,7 @@
 
 The Indecisive Shopper displays 10 active Gilt sample sales for women. All images link back to the original Gilt sale. Users receive random encouraging messages when hovering over photos.
 
-<a href="http://indecisiveshopper.herokuapp.com/" target="_blank"><img src="http://www.korenlc.com/wp-content/uploads/2014/06/gilt-1024x575.png"></a>
+<a href="http://indecisiveshopper.herokuapp.com/" target="_blank"><img src="http://www.korenlc.com/wp-content/uploads/2014/06/gilt-sinatra-1024x576.png"></a>
 
 ## Background
 
