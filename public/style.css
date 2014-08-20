@@ -72,7 +72,7 @@ a {
 h1 {
   /*padding-top: 10px;*/
   /*height: 80px;*/
-  font-size: 35px;
+  font-size: 25px;
   background: rgba(0, 0, 0, .5);
   /*margin-bottom: 180px;*/
 }
@@ -87,6 +87,7 @@ h2 {
   color: red;
   text-shadow: none;
   background: none;
+  padding-top: 215px;
 }
 
 p {
