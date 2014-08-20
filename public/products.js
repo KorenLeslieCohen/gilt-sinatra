@@ -1,6 +1,6 @@
 $(document).ready(function(){ 
 
-    $('#products').hide();
+    $('#products, h6').hide();
 
     var URL = 'https://api.gilt.com/v1/sales/women/active.json?apikey=b532e00d16c37e95789918cce9df4cdf';
 
@@ -24,8 +24,8 @@ $(document).ready(function(){
                   var image = image_object[key2].url;
                }   
 
-              $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1><br><p>" + sale_description + "</p>" + "</div></a></li>");
-              $('#products').fadeIn(3000);
+              $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1><br><p>" + sale_description + "</p></div></a></li>");
+              $('#products, h6').fadeIn(4000);
 
           }
 
