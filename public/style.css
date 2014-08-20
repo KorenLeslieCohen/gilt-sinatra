@@ -11,7 +11,6 @@ body {
 
 nav {
   position: fixed;
-  /*text-align: center;*/
   background: black;
   width: 1000px;
   margin-top: 0;
@@ -33,7 +32,6 @@ nav {
 
 .sale_info {
   width: 450px;
-  /*margin-left: 12.5px;*/
   margin-right: 12.5px;
   position: center;
   text-align: center;
@@ -54,7 +52,6 @@ a {
 h1 {
   font-size: 25px;
   background: rgba(0, 0, 0, .5);
-  /*background: #B98604;*/
 }
 
 h2 {
