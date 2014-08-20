@@ -1,6 +1,4 @@
 @import url('http://fonts.googleapis.com/css?family=Pathway+Gothic+One');
-@import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
-@import url('http://fonts.googleapis.com/css?family=Lobster+Two');
 
 body {
   width: 1000px;
@@ -25,7 +23,6 @@ body {
   margin-left: 12.5px;
   margin-right: 12.5px;
   position: center;
-  /*padding: auto;*/
   text-align: center;
   height: 300px;
   margin-bottom: 12.5px;
@@ -53,17 +50,6 @@ h2 {
   background: none;
   padding-top: 65px;
   padding-bottom: 140px;
-}
-
-p {
-/*  margin-top: 180px;
-  font-size: 20px;
-  background: rgba(0, 0, 0, .5);*/
-  display:none;
-}
-
-p:hover {
-  background: rgba(0, 0, 0, .7);
 }
 
 h3,

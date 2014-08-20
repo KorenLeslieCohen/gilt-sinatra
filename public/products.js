@@ -1,4 +1,4 @@
-$(document).ready(function(){ 
+$(document).ready(function () {
 
     $('#products, h6').hide();
 
@@ -12,32 +12,30 @@ $(document).ready(function(){
             console.log("Gilt API successful");
 
             for (var i = 0; i < 10; i++) {
-              var sale_name = response.sales[i].name;
-              var sale_description = response.sales[i].description;
-              var sale_url = response.sales[i].sale_url;
+                var sale_name = response.sales[i].name;
+                // var sale_description = response.sales[i].description;
+                var sale_url = response.sales[i].sale_url;
 
-              for (var key in response.sales[i].image_urls) {
-                  var image_object = response.sales[i].image_urls[key];
+                for (var key in response.sales[i].image_urls) {
+                    var image_object = response.sales[i].image_urls[key];
                 }
-                
-               for (var key2 in image_object) {
-                  var image = image_object[key2].url;
-               }   
 
-              $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1><br><p>" + sale_description + "</p></div></a></li>");
-              $('#products, h6').fadeIn(3000);
+                for (var key2 in image_object) {
+                    var image = image_object[key2].url;
+                }
 
-          }
+                $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1></div></a></li>");
+                $('#products, h6').fadeIn(3000);
 
-            $('li').mouseenter(function(){
-              var affirmationArray = ['You know you want these.', 'Treat yourself.', 'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 'Just a click away.', 'These were meant for you.'];
-              var rand = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
-              $(this).closest('li').find('h1').append("<h2>" + rand + "</h2>");
-              $(this).closest('li').find('p').css("opacity", "0");
-                $('li').mouseleave(function(){
-                  $(this).closest('li').find('p').css("opacity", "1");
-                  $('h2').remove();
-              });
+            }
+
+            $('li').mouseenter(function () {
+                var affirmationArray = ['You know you want these.', 'Treat yourself.', 'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 'Just a click away.', 'These were meant for you.'];
+                var rand = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
+                $(this).closest('li').find('h1').append("<h2>" + rand + "</h2>");
+                $('li').mouseleave(function () {
+                    $('h2').remove();
+                });
             });
 
         },
