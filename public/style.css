@@ -101,4 +101,23 @@ footer {
   text-align: center;
 }
 
+/* iPhone (portrait) - 320px Breakpoint -------> */
+@media only screen and (max-width : 320px) {
+
+  body {
+    width: 320px;
+  }
+
+  nav {
+    width: 320px;
+  }
+
+  .products ul li {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
 
