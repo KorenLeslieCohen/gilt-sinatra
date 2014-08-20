@@ -5,11 +5,24 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+nav {
+  position: fixed;
+  /*text-align: center;*/
+  background: black;
+  width: 1000px;
+  margin-top: 0;
+  padding-top: 0;
+  z-index: 999;
 }
 
 .products {
   margin-left: auto;
   margin-right: auto;
+  padding-top: 130px;
 }
 
 .products ul li {
@@ -20,7 +33,7 @@ body {
 
 .sale_info {
   width: 450px;
-  margin-left: 12.5px;
+  /*margin-left: 12.5px;*/
   margin-right: 12.5px;
   position: center;
   text-align: center;
@@ -61,8 +74,9 @@ h6 {
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 55px;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 h3 img {
@@ -72,7 +86,7 @@ h3 img {
 h5,
 h6 {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 h5 {
@@ -82,4 +96,12 @@ h5 {
 h6 {
   font-size: 15px;
 }
+
+footer {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
 
