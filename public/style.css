@@ -112,6 +112,10 @@ footer {
     width: 320px;
   }
 
+  .sale_info {
+    width: 320px;
+  }
+
   .products ul li {
     float: none;
     margin-left: auto;
