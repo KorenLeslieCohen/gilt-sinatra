@@ -25,7 +25,7 @@ $(document).ready(function(){
                }   
 
               $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1><br><p>" + sale_description + "</p></div></a></li>");
-              $('#products, h6').fadeIn(4000);
+              $('#products, h6').fadeIn(3000);
 
           }
 
