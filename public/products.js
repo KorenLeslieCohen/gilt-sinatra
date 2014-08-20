@@ -30,10 +30,12 @@ $(document).ready(function(){
           }
 
             $('li').mouseenter(function(){
-              var affirmationArray = ['You know you want these.', 'You look fantastic today.', 'Treat yourself.', 'Buy yourself a present.'];
+              var affirmationArray = ['You know you want these.', 'Treat yourself.', 'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 'Just a click away.', 'These were meant for you.'];
               var rand = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
               $(this).closest('li').find('h1').append("<h2>" + rand + "</h2>");
+              $(this).closest('li').find('p').css("opacity", "0");
                 $('li').mouseleave(function(){
+                  $(this).closest('li').find('p').css("opacity", "1");
                   $('h2').remove();
               });
             });
