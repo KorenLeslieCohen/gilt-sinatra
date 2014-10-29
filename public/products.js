@@ -26,15 +26,15 @@ $(document).ready(function () {
                 }
 
                 // handlebars
-                var dataOne = {saleUrl: saleUrlData};
-                var dataTwo = {image: imageData};
-                var dataThree = {saleName: saleNameData};
+                var urlData = {saleUrl: saleUrlData};
+                var imgData = {image: imageData};
+                var nameData = {saleName: saleNameData};
 
                 var templateOne = Handlebars.compile($('#one-product-template').html());
                 var templateTwo = Handlebars.compile($('#two-product-template').html());
                 var templateThree = Handlebars.compile($('#three-product-template').html());
                 
-                arr.push(templateOne(dataOne), templateTwo(dataTwo), templateThree(dataThree));
+                arr.push(templateOne(urlData), templateTwo(imgData), templateThree(nameData));
                 joinedArr = arr.join("");
             }
 
@@ -49,10 +49,10 @@ $(document).ready(function () {
                 var random = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
 
                 // handlebars
-                var data = {rand: random};
-                var template = Handlebars.compile($('#random-template').html());
+                var dataRand = {rand: random};
+                var templateRand = Handlebars.compile($('#random-template').html());
                 
-                $(this).closest('li').find('h1').append(template(data));
+                $(this).closest('li').find('h1').append(templateRand(dataRand));
                 $('li').mouseleave(function () {
                     $('h2').remove();
                 });
