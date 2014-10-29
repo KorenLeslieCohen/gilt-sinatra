@@ -14,45 +14,30 @@ $(document).ready(function () {
             var arr = [];
 
             for (var i = 0; i < 10; i++) {
-                var saleNameData = response.sales[i].name;
-                var saleUrlData = response.sales[i].sale_url;
+                var saleName = response.sales[i].name;
+                var saleUrl = response.sales[i].sale_url;
 
                 for (var key in response.sales[i].image_urls) {
                     var imageObject = response.sales[i].image_urls[key];
                 }
 
                 for (var key2 in imageObject) {
-                    var imageData = imageObject[key2].url;
+                    var image = imageObject[key2].url;
                 }
 
-                // handlebars
-                var urlData = {saleUrl: saleUrlData};
-                var imgData = {image: imageData};
-                var nameData = {saleName: saleNameData};
-
-                var templateOne = Handlebars.compile($('#one-product-template').html());
-                var templateTwo = Handlebars.compile($('#two-product-template').html());
-                var templateThree = Handlebars.compile($('#three-product-template').html());
-                
-                arr.push(templateOne(urlData), templateTwo(imgData), templateThree(nameData));
-                joinedArr = arr.join("");
+                $('#products').append("<li><a href='" + saleUrl + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + saleName + "</h1></div></a></li>");            
+                $('#products, h6').fadeIn(3000);
             }
 
-            $('#products').append(joinedArr);
-            $('#products, h6').fadeIn(3000);
+
 
             // random message on hover 
             $('li').mouseenter(function () {
                 var affirmationArray = ['You know you want these.', 'Treat yourself.', 
                     'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 
                     'Just a click away.', 'These were meant for you.', 'Pamper yourself.'];
-                var random = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
-
-                // handlebars
-                var dataRand = {rand: random};
-                var templateRand = Handlebars.compile($('#random-template').html());
-                
-                $(this).closest('li').find('h1').append(templateRand(dataRand));
+                var rand = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
+                $(this).closest('li').find('h1').append("<h2>" + rand + "</h2>");
                 $('li').mouseleave(function () {
                     $('h2').remove();
                 });
