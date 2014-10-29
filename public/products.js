@@ -11,28 +11,48 @@ $(document).ready(function () {
         success: function (response) {
             console.log("Gilt API successful");
 
+            var arr = [];
+
             for (var i = 0; i < 10; i++) {
-                var sale_name = response.sales[i].name;
-                // var sale_description = response.sales[i].description;
-                var sale_url = response.sales[i].sale_url;
+                var saleNameData = response.sales[i].name;
+                var saleUrlData = response.sales[i].sale_url;
 
                 for (var key in response.sales[i].image_urls) {
-                    var image_object = response.sales[i].image_urls[key];
+                    var imageObject = response.sales[i].image_urls[key];
                 }
 
-                for (var key2 in image_object) {
-                    var image = image_object[key2].url;
+                for (var key2 in imageObject) {
+                    var imageData = imageObject[key2].url;
                 }
 
-                $('#products').append("<li><a href='" + sale_url + "'target='_blank'><div class='sale_info' style='background-image:url(\"" + image + "\"); background-size:cover'><h1>" + sale_name + "</h1></div></a></li>");
-                $('#products, h6').fadeIn(3000);
+                // handlebars
+                var dataOne = {saleUrl: saleUrlData};
+                var dataTwo = {image: imageData};
+                var dataThree = {saleName: saleNameData};
 
+                var templateOne = Handlebars.compile($('#one-product-template').html());
+                var templateTwo = Handlebars.compile($('#two-product-template').html());
+                var templateThree = Handlebars.compile($('#three-product-template').html());
+                
+                arr.push(templateOne(dataOne), templateTwo(dataTwo), templateThree(dataThree));
+                joinedArr = arr.join("");
             }
 
+            $('#products').append(joinedArr);
+            $('#products, h6').fadeIn(3000);
+
+            // random message on hover 
             $('li').mouseenter(function () {
-                var affirmationArray = ['You know you want these.', 'Treat yourself.', 'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 'Just a click away.', 'These were meant for you.', 'Pamper yourself.'];
-                var rand = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
-                $(this).closest('li').find('h1').append("<h2>" + rand + "</h2>");
+                var affirmationArray = ['You know you want these.', 'Treat yourself.', 
+                    'Buy yourself a present.', 'You deserve it.', 'Indulge a little.', 
+                    'Just a click away.', 'These were meant for you.', 'Pamper yourself.'];
+                var random = affirmationArray[Math.floor(Math.random() * affirmationArray.length)];
+
+                // handlebars
+                var data = {rand: random};
+                var template = Handlebars.compile($('#random-template').html());
+                
+                $(this).closest('li').find('h1').append(template(data));
                 $('li').mouseleave(function () {
                     $('h2').remove();
                 });
